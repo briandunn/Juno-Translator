@@ -1,7 +1,7 @@
 //
-// Juno2cc
+// Juno Translator
 //
-// 2006 Brian Dunn <job17and9@yahoo.com>
+// 2009 Brian Dunn brianpatrickdunn@gmail.com
 //
 // This program is free software; you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@ using std::endl;
 
 #include <alsa/asoundlib.h>
 
-#define MY_NAME "Juno2cc"
+#define MY_NAME "juno-translator"
 
 static bool open_seq(snd_seq_t **seq_handle, int& in_port, int& out_port) {
 
@@ -69,7 +69,6 @@ CC	CC(dec)	Description		Parameter Number
 
 void convert( snd_seq_t *seq_handle, int out_port ) {
 	snd_seq_event_t *ev;
-	//char data[7];
 	
 	do {
 		snd_seq_event_input( seq_handle, &ev );

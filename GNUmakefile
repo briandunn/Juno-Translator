@@ -1,7 +1,7 @@
 #
-# Juno2cc
+# Juno Translator
 #
-# 2006 Brian Dunn <job17and9@yahoo.com>
+# 2009 Brian Dunn brianpatrickdunn@gmail.com
 #
 #This program is free software; you can redistribute it and/or modify
 #it under the terms of the GNU General Public License as published by
@@ -18,7 +18,7 @@
 #Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 VERSION=0.1
-NAME=juno2cc
+NAME=juno-translator
 LIBS = -lasound
 INCLUDES = -I.
 
@@ -31,10 +31,9 @@ LDFLAGS = $(LIBS)
 
 .PHONY: all checkgcc clean spotless realclean distclean mrproper diff gprof.txt depclean dist
 
-SRC := $(wildcard *.cc)
-HDR := $(wildcard *.hh)
+SRC := $(wildcard *.cpp)
 
-OBJ := $(addprefix gen/obj/, $(notdir $(SRC:.cc=.o)))
+OBJ := $(addprefix gen/obj/, $(notdir $(SRC:.cpp=.o)))
 
 all: gen/$(NAME)
 
@@ -48,12 +47,12 @@ ifneq ($(filter-out clean spotless realclean distclean mrproper checkgcc issues 
   -include $(addprefix gen/dep/, $(notdir $(OBJ:.o=.d)))
 endif
 
-gen/dep/%.d: %.cc
+gen/dep/%.d: %.cpp
 	@mkdir -p gen/dep/
 	@echo "<dep| $<"
 	@$(CC) -M -MG $(CFLAGS) $< | sed -e 's@ /[^ ]*@@g' -e 's@^\(.*\)\.o:@gen/dep/\1.d gen/obj/\1.o:@' > $@
 
-gen/obj/%.o: %.cc
+gen/obj/%.o: %.cpp
 	@mkdir -p gen/obj/
 	@echo "|cmp> $<"
 	@$(CXX) -c $(CXXFLAGS) $< -o $@
