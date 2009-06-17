@@ -1,43 +1,43 @@
-=Juno Translator
+h1. Juno Translator
 
-== Building
+h2. Building
 if you:
 * are running linux
 * have the ALSA headers installed (Ubuntu package libasound2-dev)
 
 you can build with:
- $ make
+ @$ make@
 
-== Usage
+h2. Usage
 I use this by running it in the background, from a terminal. something like
- $ juno-translator &
+@$ juno-translator &@
 Now when I move my beautiful Juno slide pots, controller messages are spewed forth on her channel! 
 
-CC	CC(dec)	Description		Parameter Number
-10	16		LFO Rate		00
-11	17		LFO Delay Time	01
-12	18		DCO_LFO			02
-13	19		DCO_PWM			03
-14	20		NOISE			04
-15	21		VCF_cutoff		05
-16	22		VCF_resonance	06
-17	23		VCF_ENV			07
-18	24		VCF_LFO			08
-19	25		VCF_KYBD		09
-1A	26		VCA				0A
-1B	27		ENV_A			0B
-1C	28		ENV_D			0C
-1D	29		ENV_S			0D
-1E	30		ENV_R			0E
-1F	31		SUB				0F
+_.CC |_.CC(dec) |_.Description |_.Parameter Number
+10 | 16 | LFO Rate | 00
+11 | 17 | LFO Delay Time | 01
+12 | 18 | DCO_LFO | 02
+13 | 19 | DCO_PWM | 03
+14 | 20 | NOISE | 04
+15 | 21 | VCF_cutoff | 05
+16 | 22 | VCF_resonance | 06
+17 | 23 | VCF_ENV | 07
+18 | 24 | VCF_LFO | 08
+19 | 25 | VCF_KYBD | 09
+1A | 26 | VCA | 0A
+1B | 27 | ENV_A | 0B
+1C | 28 | ENV_D | 0C
+1D | 29 | ENV_S | 0D
+1E | 30 | ENV_R | 0E
+1F | 31 | SUB | 0F
 
-== Credits
+h2. Credits
 Written in 2009 by Brian Dunn (brianpatrickdunn at gmail dot com)
 
 Based on juno_rose by Joost Vervante Damad,
 which was based on midiroute.c by Matthias Nagorni
 
-== Liscense
+h2. Liscense
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation; either version 2 of the License, or
