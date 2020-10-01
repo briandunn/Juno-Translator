@@ -10,6 +10,7 @@ you can build with:
  @$ make@
 
 h2. Usage
+h.
 
 I use this by running it in the background, from a terminal. something like
 
